@@ -22,7 +22,7 @@ const cell = new Builder()
     .cell()
 
 // Serialize BOC to Uint8Array
-const serialized = BOC.toBytes([ cell ])
+const serialized = new BOC([ cell ]).toBytes()
 // Deserialize BOC from Uint8Array and get first root cell
 const [ deserialized ] = BOC.from(serialized)
 const result = deserialized.slice().loadString()
